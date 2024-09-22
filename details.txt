@@ -1,0 +1,25 @@
+Purpose for Personal Blog (Updated):
+The purpose of your personal blog is to document and showcase your comprehensive learning journey in software development, covering everything from LeetCode, DSA training, and college exam preparation to your growing expertise in various technologies like HTML, CSS, JavaScript, Node.js, Express, MongoDB, and React. You aim to share your progress in both academic and professional pursuits, giving insights into how you balance coding, exam prep, and other extracurricular activities like theatre and art. The blog will serve as an inspiration and learning resource for others following a similar path.
+
+
+
+
+
+
+
+
+
+
+
+Target Audience (Updated):
+Aspiring Developers: Students or beginners who are learning coding and looking for guidance on how to balance learning with exam prep, LeetCode practice, and project work.
+Coding Enthusiasts: Individuals interested in backend development, full-stack technologies, and preparing for competitive programming and interviews.
+Peers in College: Fellow students preparing for exams, looking for study strategies, and those exploring GitHub for project collaboration.
+Professionals and Mentors: Developers who can provide feedback on your code and journey or share valuable advice based on their own experiences.
+
+
+
+
+
+
+

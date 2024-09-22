@@ -1,0 +1,95 @@
+express.json(): This is a built-in middleware function in Express that parses incoming requests with JSON bodies and makes the data available in req.body.
+Purpose: It allows your server to handle incoming data in JSON format, which is commonly used for API requests
+Without this middleware, the request body would not be parsed, and req.body would be undefined
+By using app.use(express.json());, Express will automatically parse the incoming JSON data, and you can access it in your route handler 
+
+
+
+The line require('dotenv').config(); is used to load environment variables from a .env file into process.env in a Node.js application.
+Explanation:
+dotenv: It is a package that allows you to manage environment-specific variables (such as API keys, database credentials, and other sensitive data) in a safe and organized way by storing them in a .env file.
+.config(): This function reads the .env file and loads its contents as environment variables.
+Purpose:
+It helps keep sensitive information out of your source code, making it easier to manage different configurations across development, staging, and production environments.
+
+what to do if I forget mongodb cluster password?
+Steps to Reset Your MongoDB Cluster Password
+Log in to MongoDB Atlas:
+
+Visit the MongoDB Atlas website and log into your account.
+Navigate to the Project:
+
+Select the project containing the cluster for which you need to reset the password.
+Go to the "Database Access" Settings:
+
+On the left-hand side menu, under Security, click on Database Access.
+Locate the User:
+
+Find the database user whose password you want to reset. Each user is listed with their username.
+Edit User Credentials:
+
+Click on the Edit button (pencil icon) next to the user's name.
+Reset Password:
+
+In the pop-up dialog, you'll see the option to set a new password. Enter the new password and confirm the changes.
+Update Your Application:
+
+After resetting the password, make sure to update any connection strings in your application or environment variables with the new credentials.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+nodemon setup:
+npm i -g nodemon 
+::::nodemon app.js
+The error you're encountering is due to PowerShell's execution policy settings, which restricts the execution of certain scripts, including nodemon.ps1. This issue can be resolved by changing the execution policy in PowerShell.
+
+Solution: Change Execution Policy
+Open PowerShell as Administrator:
+
+Press Windows + X and select Windows PowerShell (Admin) or Terminal (Admin) if you're using a newer version of Windows.
+Check Current Execution Policy:
+
+To see your current execution policy, run the following command:
+bash
+Copy code
+Get-ExecutionPolicy
+It will likely be set to Restricted or RemoteSigned, which could prevent the script from running.
+Change Execution Policy:
+
+Run the following command to allow local scripts to be executed:
+bash
+Copy code
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+This will allow locally created scripts to run, but still prevent downloaded scripts from running unless they are signed.
+Confirm the Change:
+
+When prompted, type A to confirm changing the policy for all scripts.
+plaintext
+Copy code
+Execution Policy Change
+The execution policy helps protect you from scripts that you do not trust. Changing the execution policy might expose you to the security risks described in the about_Execution_Policies help topic at https:/go.microsoft.com/fwlink/?LinkID=135170. Do you want to change the execution policy?
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"): A
+Restart PowerShell:
+
+After making the change, restart your PowerShell or terminal.
+Run Nodemon:
+
+Now, try running nodemon again:
+bash
+Copy code
+nodemon --help
+Explanation:
+RemoteSigned: This policy allows scripts that are created locally to run. Any scripts downloaded from the internet must be signed by a trusted publisher before they can be run.
+Set-ExecutionPolicy -Scope CurrentUser: This limits the policy change to only your user account and doesn't affect system-wide execution policies.
+Once this is done, nodemon should work without throwing the execution policy error.

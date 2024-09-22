@@ -1,0 +1,63 @@
+Functional Requirements (Updated):
+User Authentication:
+
+Sign-up, login, and logout features for users.
+Ability to manage user profiles and preferences.
+Blog Post Management:
+
+Ability to create, edit, and delete posts for documenting various topics like coding practice, DSA, LeetCode, and exam prep.
+Integration of code snippets with syntax highlighting for sharing coding problems and solutions.
+Search and Filter Functionality:
+
+Search functionality to allow users to find blog posts on specific topics like DSA, backend development, or college exam strategies.
+Filter posts by categories like "LeetCode," "DSA," "College Prep," "GitHub Projects," etc.
+Single Article and List of Articles:
+
+Ability to return a single article or a list of articles based on search filters.
+Pagination:
+
+Pagination for navigating through posts (especially important as you accumulate more content).
+Tags and Categories:
+
+Use of tags like "LeetCode," "DSA," "Exam Prep," "React," "Backend," and more.
+Create categories based on topics (e.g., "Tech Projects," "College Life," "DSA Training").
+Interactive Code Snippets:
+
+Embed interactive code editors (like CodePen or JSFiddle) to allow users to play with code examples directly within the blog.
+GitHub Integration:
+
+Embed GitHub repositories in blog posts to showcase your open-source projects and encourage collaboration.
+Comments Section:
+
+Allow readers to comment on posts, ask questions, or offer feedback on your solutions and thoughts.
+Content Sections for Coding Practice:
+
+Separate sections for different types of content:
+LeetCode Problems and Solutions.
+DSA Concepts and Practice.
+Projects with GitHub links.
+College Exam Prep Notes and Resources.
+Non-Functional Requirements (Updated):
+Performance:
+
+Ensure the blog loads quickly, even with embedded code editors and GitHub repositories.
+Security:
+
+Implement secure authentication for users.
+Protect against spam comments with CAPTCHA or email verification.
+Scalability:
+
+Plan for an increasing number of blog posts and users.
+Use efficient database queries for search and pagination.
+Usability:
+
+Design a clean and intuitive user interface, focusing on easy navigation between coding resources, exam tips, and project documentation.
+SEO and Discoverability:
+
+Implement SEO best practices to make sure your blog ranks well in search engines, helping other learners discover your content.
+Backup & Recovery:
+
+Set up a system to back up blog posts and comments to avoid data loss.
+Accessibility:
+
+Ensure the blog is accessible to all users, including those with disabilities (using screen readers, etc.).

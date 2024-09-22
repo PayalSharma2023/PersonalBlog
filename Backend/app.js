@@ -1,6 +1,13 @@
 const express = require('express');
-const app = express();
+require('dotenv').config();
+const ConnectDB = require('./db/db');
 
-app.listen(3000, ()=>{
-    console.log(`app running`);
-})
+const app = express();
+app.use(express.json());
+
+ConnectDB();
+
+
+
+app.use(express.json());
+
