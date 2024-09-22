@@ -38,7 +38,10 @@ After resetting the password, make sure to update any connection strings in your
 
 
 
+In MongoDB (using Mongoose for example), the option { timestamps: true } is a configuration option that, when set in a schema, automatically adds two special fields to each document:
 
+createdAt: This field will store the date and time when the document was created.
+updatedAt: This field will store the date and time when the document was last updated.
 
 
 
@@ -93,3 +96,11 @@ Explanation:
 RemoteSigned: This policy allows scripts that are created locally to run. Any scripts downloaded from the internet must be signed by a trusted publisher before they can be run.
 Set-ExecutionPolicy -Scope CurrentUser: This limits the policy change to only your user account and doesn't affect system-wide execution policies.
 Once this is done, nodemon should work without throwing the execution policy error.
+
+
+
+When you listen to a port in the database connection file (like db.js), it can lead to confusion and issues, including the 404 error you're experiencing. Here’s why it's important to separate your concerns between the database connection and your server logic:
+
+1. Separation of Concerns
+Database Connection: The file that manages the database connection should only handle connecting to the database. It shouldn't be responsible for starting the server or handling routes. This makes your code cleaner, more modular, and easier to maintain.
+Server Logic: The main application file (e.g., app.js) should handle HTTP requests, define routes, and start the server. This separation helps you understand which part of your code is responsible for what functionality.
