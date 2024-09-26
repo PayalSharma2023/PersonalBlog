@@ -104,3 +104,15 @@ When you listen to a port in the database connection file (like db.js), it can l
 1. Separation of Concerns
 Database Connection: The file that manages the database connection should only handle connecting to the database. It shouldn't be responsible for starting the server or handling routes. This makes your code cleaner, more modular, and easier to maintain.
 Server Logic: The main application file (e.g., app.js) should handle HTTP requests, define routes, and start the server. This separation helps you understand which part of your code is responsible for what functionality.
+
+Summary of Search Options:
+Basic Filtering: Filter by exact field values.
+Regex Search: Search for text patterns (partial matches).
+Logical Queries: Use $and, $or to combine multiple conditions.
+Array Search: Use $in to search within array fields (tags).
+Range Queries: Search by date or number ranges using $gte, $lte.
+Sorting: Use sort for ordering results (by date, etc.).
+Pagination: Use limit and skip for efficient pagination
+
+
+npm create vite@latest

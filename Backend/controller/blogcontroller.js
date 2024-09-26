@@ -1,7 +1,8 @@
 const blogModel = require("../model/blogmodel");
+const userModel = require("../model/usermodel");
 
 const CreateBlog = async (req, res) => {
-  const { title, snippet, body } = req.body;
+  const { title, snippet, body, tags } = req.body;
   const comment = req.body;
   if ((!title, !snippet, !body)) {
     res.status(400).json({
@@ -11,24 +12,32 @@ const CreateBlog = async (req, res) => {
   }
 
   try {
+    // Ensure req.user._id is populated by JWT middleware
+    if (!req.params || !req.params._id) {
+      return res.status(401).json({ message: 'Unauthorized, user not found' });
+    }
+
     const article = new blogModel({
       title,
       snippet,
       body,
+      tags,
+      createdBy: req.params._id, // Attach the current user's ID
     });
 
     await article.save();
 
-    res.status(200).json({
-      message: "article create successfully",
+    return res.status(201).json({
+      message: "article created successfully",
       blogId: article._id,
     });
+
+
   } catch (err) {
     console.log(err);
-    req.status(500).json({
+    return res.status(500).json({
       message: "internal server error",
     });
-    return;
   }
 };
 
@@ -203,6 +212,34 @@ const SearchBlog = async (req, res) => {
     });
   }
 };
+
+const verifyUser = async(req, res, next) => {
+  const token = req.header('Authorization')?.split(' ')[1];//Authorization: Bearer <token>
+  if(!token){
+      res.status(401).json({
+          message: "No token provided, unauthorized"
+      })
+      return
+  }
+  try{
+      const secret_key = "123rtyuo"
+      console.log("hi")
+      const decode = await jwt.verify(token, secret_key);
+      req.userId = decode.userId;
+      console.log("Authorized: ", decode);
+      res.status(200).json({
+          message: "token verified successfully"
+      });
+
+      next();
+
+  }catch(err){
+      console.log(err);
+      res.status(500).json({
+          message: "internal server error"
+      })
+  }
+}
 
 module.exports = {
   CreateBlog,

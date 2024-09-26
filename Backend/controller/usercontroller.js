@@ -86,7 +86,8 @@ const login = async(req, res) => {
 
         res.status(200).json({
             token: token,
-            message: "user logged in successfully"
+            message: "user logged in successfully",
+            userId: existingUser._id
         })
 
 
@@ -110,7 +111,7 @@ const verifyUser = async(req, res, next) => {
     try{
         const secret_key = "123rtyuo"
         console.log("hi")
-        const decode = jwt.verify(token, secret_key);
+        const decode = await jwt.verify(token, secret_key);
         req.userId = decode.userId;
         console.log("Authorized: ", decode);
         res.status(200).json({
