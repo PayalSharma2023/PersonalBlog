@@ -1,5 +1,5 @@
 const blogModel = require("../model/blogmodel");
-const userModel = require("../model/usermodel");
+const jwt = require('jsonwebtoken');
 
 const CreateBlog = async (req, res) => {
   const { title, snippet, body, tags } = req.body;
@@ -225,7 +225,7 @@ const verifyUser = async(req, res, next) => {
       const secret_key = "123rtyuo"
       console.log("hi")
       const decode = await jwt.verify(token, secret_key);
-      req.userId = decode.userId;
+      req.query.userId = decode.userId;
       console.log("Authorized: ", decode);
       res.status(200).json({
           message: "token verified successfully"
@@ -248,4 +248,5 @@ module.exports = {
   UpdateBlog,
   DeleteBlog,
   SearchBlog,
+  verifyUser
 };

@@ -12,7 +12,7 @@ const blogSchema = new Schema({
     },
     body: {
         type: String,
-        required: true,
+        required: true
     },
     tags: [String], // Assuming tags is an array of strings
 

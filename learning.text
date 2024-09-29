@@ -116,3 +116,6 @@ Pagination: Use limit and skip for efficient pagination
 
 
 npm create vite@latest
+
+npm install -D tailwindcss
+npx tailwindcss init
