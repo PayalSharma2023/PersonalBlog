@@ -4,7 +4,7 @@ import '../App.css';
 function Blogform() {
     return(
         <div>
-            <h1 className="text-3xl text-gray-50 font-bold underline bg-blend-color-dodge">Create Article</h1>
+            <h1 className="text-3xl text-red-300 font-bold underline bg-blend-color-dodge">Create Article</h1>
             <form action="">
                 <div className="">
                 <label htmlFor="" name="title" className="mt-1 text-sm text-gray-500 drak:text-gray-300">title</label>
