@@ -123,3 +123,5 @@ npx tailwindcss init
 https://tailwindcss.com/docs/guides/vite
 
 json placeholder
+
+npm i react-router-dom
