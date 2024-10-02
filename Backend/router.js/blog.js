@@ -3,7 +3,7 @@ const {CreateBlog, getAllBlog, getBlogById, UpdateBlog, DeleteBlog, SearchBlog, 
 
 const router = express.Router();
 
-router.post('/article/:id',verifyUser, CreateBlog);
+router.post('/article', CreateBlog);
 router.get('/article', getAllBlog);
 router.get('/article/:id', getBlogById);
 router.put('/article/:id',verifyUser, UpdateBlog);
